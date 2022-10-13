@@ -1,0 +1,73 @@
+node-hosted-git-info (4.0.2-1) unstable; urgency=medium
+
+  * Team upload
+  * Fix GitHub tags regex
+  * Update standards version to 4.6.0, no changes needed.
+  * Fix filenamemangle
+  * New upstream version 4.0.2
+  * Fix test for tap < 14
+
+ -- Yadd <yadd@debian.org>  Tue, 09 Nov 2021 13:03:30 +0100
+
+node-hosted-git-info (3.0.8-1) unstable; urgency=medium
+
+  * Team upload
+  * Declare compliance with policy 4.5.1
+  * Modernize debian/watch
+  * New upstream version 3.0.8
+
+ -- Xavier Guimard <yadd@debian.org>  Sat, 30 Jan 2021 09:39:46 +0100
+
+node-hosted-git-info (3.0.7-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 3.0.7
+
+ -- Xavier Guimard <yadd@debian.org>  Wed, 21 Oct 2020 12:24:41 +0200
+
+node-hosted-git-info (3.0.5-1) unstable; urgency=medium
+
+  * Team upload
+  * Bump debhelper compatibility level to 13
+  * Use dh-sequence-nodejs
+  * New upstream version 3.0.5
+  * Add dependency to node-lru-cache
+
+ -- Xavier Guimard <yadd@debian.org>  Tue, 06 Oct 2020 14:06:51 +0200
+
+node-hosted-git-info (2.8.5-1) unstable; urgency=medium
+
+  * Team upload
+  * Declare compliance with policy 4.5.0
+  * Bump debhelper compatibility level to 12
+  * Use pkg-js-tools auto test & install
+  * Add "Rules-Requires-Root: no"
+  * Add debian/gbp.conf
+  * Add upstream/metadata
+  * New upstream version 2.8.5
+  * Update copyright
+
+ -- Xavier Guimard <yadd@debian.org>  Sun, 08 Mar 2020 10:49:54 +0100
+
+node-hosted-git-info (2.7.1-1) unstable; urgency=medium
+
+  * New upstream version 2.7.1
+  * Use salsa.debian.org in Vcs-* fields
+  * Bump debhelper compatibility level to 11
+  * Bump Standards-Version to 4.2.1 (no changes needed)
+  * Add myself to uploaders
+
+ -- Pirate Praveen <praveen@debian.org>  Sat, 15 Sep 2018 20:27:28 +0530
+
+node-hosted-git-info (2.5.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+
+ -- Pirate Praveen <praveen@debian.org>  Fri, 10 Nov 2017 12:46:40 +0530
+
+node-hosted-git-info (2.1.5-1) unstable; urgency=low
+
+  * Initial release (Closes: #841225)
+
+ -- Sruthi Chandran <srud@disroot.org>  Tue, 18 Oct 2016 22:12:23 +0530
