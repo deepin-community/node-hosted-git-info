@@ -1,4 +1,4 @@
-const HostedGit = require('../')
+const HostedGit = require('..')
 const t = require('tap')
 
 // each of these urls should return `undefined`
@@ -12,7 +12,7 @@ const urls = [
   '::',
   '',
   null,
-  undefined
+  undefined,
 ]
 
 t.test('invalid results parse to undefined', t => {

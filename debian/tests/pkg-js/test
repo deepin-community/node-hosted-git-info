@@ -1,1 +1,1 @@
-tap -J --100 test/*.js
+tap -J -R dot --100 test/*.js

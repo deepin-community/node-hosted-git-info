@@ -1,6 +1,80 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+## [6.1.1](https://github.com/npm/hosted-git-info/compare/v6.1.0...v6.1.1) (2022-10-27)
+
+### Bug Fixes
+
+* [`f03bfbd`](https://github.com/npm/hosted-git-info/commit/f03bfbd3022c8f6283a991ff879ed97704ac35fa) [#176](https://github.com/npm/hosted-git-info/pull/176) only correct protocols when called from githost (@lukekarrys)
+
+## [6.1.0](https://github.com/npm/hosted-git-info/compare/v6.0.0...v6.1.0) (2022-10-26)
+
+### Features
+
+* [`a44bd35`](https://github.com/npm/hosted-git-info/commit/a44bd35820eaa6878f13ee12eba5dca6425ea2bd) [#172](https://github.com/npm/hosted-git-info/pull/172) add separate static method for just parsing urls (@lukekarrys)
+
+## [6.0.0](https://github.com/npm/hosted-git-info/compare/v5.1.0...v6.0.0) (2022-10-12)
+
+### ⚠️ BREAKING CHANGES
+
+* `GitHost` now has a static `addHost` method to use instead of manually editing the object from `lib/git-host-info.js`.
+* set default git ref to HEAD
+* `hosted-git-info` is now compatible with the following semver range for node: `^14.17.0 || ^16.13.0 || >=18.0.0`
+
+### Features
+
+* [`9e0ce62`](https://github.com/npm/hosted-git-info/commit/9e0ce62b9aadb2a9cfe8999e96b004a5de4edfdf) [#142](https://github.com/npm/hosted-git-info/pull/142) refactor (@lukekarrys)
+* [`89155e8`](https://github.com/npm/hosted-git-info/commit/89155e8799369f20ae71713f64e3d0f664192a58) set default git ref to HEAD (@darcyclarke)
+* [`9ed9c38`](https://github.com/npm/hosted-git-info/commit/9ed9c38002f899ad2628f96b27b2ec9fecb4662f) [#162](https://github.com/npm/hosted-git-info/pull/162) postinstall for dependabot template-oss PR (@lukekarrys)
+
+### Bug Fixes
+
+* [`61ca7fb`](https://github.com/npm/hosted-git-info/commit/61ca7fb8f003299693e23f351eea589c38a3602c) [#152](https://github.com/npm/hosted-git-info/pull/152) parse branch names containing @ (@lukekarrys)
+* [`3cd4a98`](https://github.com/npm/hosted-git-info/commit/3cd4a9881e20d3a59bf3bb470661a29208824dd6) ignore colons after hash when correcting scp urls (@lukekarrys)
+
+## [5.1.0](https://github.com/npm/hosted-git-info/compare/v5.0.0...v5.1.0) (2022-08-09)
+
+
+### Features
+
+* add method to get an edit link to a file ([ad02952](https://github.com/npm/hosted-git-info/commit/ad02952f89fbdc99e67ae0d5308029395bde3331))
+
+
+### Bug Fixes
+
+* add comments to empty catch blocks for linting ([70a770d](https://github.com/npm/hosted-git-info/commit/70a770d1202128e15887d69dfd5c930e4ff29a00))
+
+## [5.0.0](https://www.github.com/npm/hosted-git-info/compare/v4.1.0...v5.0.0) (2022-03-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* this drops support for node 10 and non-LTS versions of node 12 and node 14
+
+### Bug Fixes
+
+* move files to lib ([a3f4836](https://www.github.com/npm/hosted-git-info/commit/a3f4836ba0a75b355c004e1991e8dd1e6321a983))
+
+
+* @npmcli/template-oss@2.9.2 ([c42e1f2](https://www.github.com/npm/hosted-git-info/commit/c42e1f216542ead9d0d328704c5db02204f15ce8))
+
+
+### Dependencies
+
+* bump lru-cache from 6.0.0 to 7.5.1 ([#128](https://www.github.com/npm/hosted-git-info/issues/128)) ([5b0b3b5](https://www.github.com/npm/hosted-git-info/commit/5b0b3b50bd36f659037e3b82a7ff47b0eff3b9f9))
+
+## [4.0.0](https://github.com/npm/hosted-git-info/compare/v3.0.7...v4.0.0) (2021-03-09)
+
+
+### Features
+
+* rewrite the entire module: all internals have been rewritten to maintain a similar contract but to remove excessive use of regular expressions, unnecessary loops, the custom string templating engine, and various other bits of complexity ([c218b9](https://github.com/npm/hosted-git-info/commit/c218b9ec90cf6a818341cd0f7b03ea65793b185b))
+
+
+### BREAKING CHANGES
+
+* extending with custom providers has changed ([c218b9](https://github.com/npm/hosted-git-info/commit/c218b9ec90cf6a818341cd0f7b03ea65793b185b))
+
+
 
 <a name="3.0.8"></a>
 ## [3.0.8](https://github.com/npm/hosted-git-info/compare/v3.0.7...v3.0.8) (2021-01-28)
