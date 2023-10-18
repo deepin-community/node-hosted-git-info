@@ -5,3 +5,4 @@ Bug-Submit: https://github.com/npm/hosted-git-info/issues/new
 Changelog: https://github.com/npm/hosted-git-info/tags
 Repository: https://github.com/npm/hosted-git-info.git
 Repository-Browse: https://github.com/npm/hosted-git-info
+Security-Contact: https://github.com/npm/hosted-git-info/tree/HEAD/SECURITY.md

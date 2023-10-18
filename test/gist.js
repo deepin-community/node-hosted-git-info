@@ -1,19 +1,16 @@
+/* eslint-disable max-len */
 'use strict'
-const HostedGit = require('../index')
+const HostedGit = require('..')
 const t = require('tap')
 
 const invalid = [
   // raw urls that are wrong anyway but for some reason are in the wild
   'https://gist.github.com/foo/feedbeef/raw/fix%2Fbug/',
   // missing both user and project
-  'https://gist.github.com/'
+  'https://gist.github.com/',
 ]
 
-// user defaults to null for all inputs that do not specify one
-// assigning the constructor here is hacky, but the only way to make assertions that compare
-// a subset of properties to a found object pass as you would expect
-const GitHost = require('../git-host')
-const defaults = { constructor: GitHost, type: 'gist', user: null, project: 'feedbeef' }
+const defaults = { type: 'gist', user: null, project: 'feedbeef' }
 const valid = {
   // shortcuts
   //
@@ -305,7 +302,7 @@ const valid = {
   'https://user:password@gist.github.com/foo/feedbeef.git': { ...defaults, default: 'https', auth: 'user:password', user: 'foo' },
   'https://user:password@gist.github.com/foo/feedbeef.git#branch': { ...defaults, default: 'https', auth: 'user:password', user: 'foo', committish: 'branch' },
   'https://:password@gist.github.com/foo/feedbeef.git': { ...defaults, default: 'https', auth: ':password', user: 'foo' },
-  'https://:password@gist.github.com/foo/feedbeef.git#branch': { ...defaults, default: 'https', auth: ':password', user: 'foo', committish: 'branch' }
+  'https://:password@gist.github.com/foo/feedbeef.git#branch': { ...defaults, default: 'https', auth: ':password', user: 'foo', committish: 'branch' },
 }
 
 t.test('valid urls parse properly', t => {
@@ -344,14 +341,18 @@ t.test('string methods populate correctly', t => {
   t.equal(parsed.hash(), '', 'hash() returns empty string when committish is unset')
   t.equal(parsed.ssh(), 'git@gist.github.com:feedbeef.git')
   t.equal(parsed.sshurl(), 'git+ssh://git@gist.github.com/feedbeef.git')
+  t.equal(parsed.edit(), 'https://gist.github.com/foo/feedbeef/edit', 'gist link only redirects with a user')
+  t.equal(parsed.edit('/lib/index.js'), 'https://gist.github.com/foo/feedbeef/edit', 'gist link only redirects with a user')
   t.equal(parsed.browse(), 'https://gist.github.com/feedbeef')
   t.equal(parsed.browse('/lib/index.js'), 'https://gist.github.com/feedbeef#file-libindex-js')
   t.equal(parsed.browse('/lib/index.js', 'L100'), 'https://gist.github.com/feedbeef#file-libindex-js')
+  t.equal(parsed.browseFile('/lib/index.js'), 'https://gist.github.com/feedbeef#file-libindex-js')
+  t.equal(parsed.browseFile('/lib/index.js', 'L100'), 'https://gist.github.com/feedbeef#file-libindex-js')
   t.equal(parsed.docs(), 'https://gist.github.com/feedbeef')
   t.equal(parsed.https(), 'git+https://gist.github.com/feedbeef.git')
   t.equal(parsed.shortcut(), 'gist:feedbeef')
   t.equal(parsed.path(), 'feedbeef')
-  t.equal(parsed.tarball(), 'https://codeload.github.com/gist/feedbeef/tar.gz/master')
+  t.equal(parsed.tarball(), 'https://codeload.github.com/gist/feedbeef/tar.gz/HEAD')
   t.equal(parsed.file(), 'https://gist.githubusercontent.com/foo/feedbeef/raw/')
   t.equal(parsed.file('/lib/index.js'), 'https://gist.githubusercontent.com/foo/feedbeef/raw/lib/index.js')
   t.equal(parsed.git(), 'git://gist.github.com/feedbeef.git')

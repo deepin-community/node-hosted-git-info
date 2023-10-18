@@ -1,3 +1,39 @@
+node-hosted-git-info (6.1.1-2) unstable; urgency=medium
+
+  * Team upload
+  * Breaks: npm < 9
+  * Back to unstable
+
+ -- Yadd <yadd@debian.org>  Fri, 18 Nov 2022 10:59:28 +0100
+
+node-hosted-git-info (6.1.1-1) experimental; urgency=medium
+
+  * Team upload
+  * New upstream version 6.1.1
+
+ -- Yadd <yadd@debian.org>  Mon, 14 Nov 2022 18:18:40 +0100
+
+node-hosted-git-info (5.1.0-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Security-Contact.
+
+  [ Yadd ]
+  * Declare compliance with policy 4.6.1
+  * New upstream version 5.1.0
+
+ -- Yadd <yadd@debian.org>  Thu, 18 Aug 2022 16:00:09 +0200
+
+node-hosted-git-info (5.0.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 5.0.0
+  * Drop patch and update test for node-tap >= 15
+
+ -- Yadd <yadd@debian.org>  Mon, 04 Apr 2022 12:31:43 +0200
+
 node-hosted-git-info (4.0.2-1) unstable; urgency=medium
 
   * Team upload
